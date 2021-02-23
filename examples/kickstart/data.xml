@@ -1,0 +1,93 @@
+<products>
+    <product name="Schnellbauschraube">
+        <image>screw.pdf</image>
+        <description>
+            <diameter>3,9mm</diameter>
+            <details>Senkkopf, Grobgewinde</details>
+            <dash>Ideal für Gipskartonplatten auf Holz</dash>
+            <dash>Phosphatierte Oberfläche</dash>
+            <dash>Gute Anhaftung von Gips auf dem Schraubkopf</dash>
+            <dash>Vor Rost geschützt</dash>
+        </description>
+        <attribute type="length" value="25mm">
+            <quantity unit="Stk" price="2" currency="€">200</quantity>
+            <quantity unit="Stk" price="5" currency="€">500</quantity>
+            <quantity unit="Stk" price="7" currency="€">1000</quantity>
+        </attribute>
+        <attribute type="length" value="35mm">
+            <quantity unit="Stk" price="3" currency="€">200</quantity>
+            <quantity unit="Stk" price="6" currency="€">500</quantity>
+            <quantity unit="Stk" price="8" currency="€">1000</quantity>
+        </attribute>
+        <attribute type="length" value="45mm">
+            <quantity unit="Stk" price="4" currency="€">200</quantity>
+            <quantity unit="Stk" price="7" currency="€">500</quantity>
+            <quantity unit="Stk" price="9" currency="€">1000</quantity>
+        </attribute>
+    </product>
+    <product name="Schraubendreher-Set">
+        <image>screwdrivers.pdf</image>
+        <description>
+            <details>Geeignet für: Schlitz und Kreuzschlitz PH, 6-tlg.</details>
+            <dash>Isolierte VDE Klingen für sicheres Arbeiten</dash>
+            <dash>Mehrkomponentiger Griff</dash>
+            <dash>Mit Griffkennzeichnung zum leichteren Finden</dash>
+            <dash>Erhöhter Korrosionsschutz</dash>
+        </description>
+        <attribute type="package" value="6">
+            <quantity unit="Verpackung" price="11" currency="€">1</quantity>
+        </attribute>
+    </product>
+    <product name="Schraubendreher-Set">
+        <image>screwdrivers.pdf</image>
+        <description>
+            <details>Geeignet für: Schlitz und Kreuzschlitz PH, 6-tlg.</details>
+            <dash>Isolierte VDE Klingen für sicheres Arbeiten</dash>
+            <dash>Mehrkomponentiger Griff</dash>
+            <dash>Mit Griffkennzeichnung zum leichteren Finden</dash>
+            <dash>Erhöhter Korrosionsschutz</dash>
+        </description>
+        <attribute type="package" value="6">
+            <quantity unit="Verpackung" price="11" currency="€">1</quantity>
+        </attribute>
+    </product>
+    <product name="Schraubendreher-Set">
+        <image>screwdrivers.pdf</image>
+        <description>
+            <details>Geeignet für: Schlitz und Kreuzschlitz PH, 8-tlg.</details>
+            <dash>Isolierte VDE Klingen für sicheres Arbeiten</dash>
+            <dash>Mehrkomponentiger Griff</dash>
+            <dash>Mit Griffkennzeichnung zum leichteren Finden</dash>
+            <dash>Erhöhter Korrosionsschutz</dash>
+        </description>
+        <attribute type="package" value="8">
+            <quantity unit="Verpackung" price="13" currency="€">1</quantity>
+        </attribute>
+    </product>
+    <product name="Schraubendreher-Set">
+        <image>screwdrivers.pdf</image>
+        <description>
+            <details>Geeignet für: Schlitz und Kreuzschlitz PH, 10-tlg.</details>
+            <dash>Isolierte VDE Klingen für sicheres Arbeiten</dash>
+            <dash>Mehrkomponentiger Griff</dash>
+            <dash>Mit Griffkennzeichnung zum leichteren Finden</dash>
+            <dash>Erhöhter Korrosionsschutz</dash>
+        </description>
+        <attribute type="package" value="10">
+            <quantity unit="Verpackung" price="15" currency="€">1</quantity>
+        </attribute>
+    </product>
+    <product name="Schraubendreher-Set">
+        <image>screwdrivers.pdf</image>
+        <description>
+            <details>Geeignet für: Schlitz und Kreuzschlitz PH, 12-tlg.</details>
+            <dash>Isolierte VDE Klingen für sicheres Arbeiten</dash>
+            <dash>Mehrkomponentiger Griff</dash>
+            <dash>Mit Griffkennzeichnung zum leichteren Finden</dash>
+            <dash>Erhöhter Korrosionsschutz</dash>
+        </description>
+        <attribute type="package" value="12">
+            <quantity unit="Verpackung" price="17" currency="€">1</quantity>
+        </attribute>
+    </product>
+</products>

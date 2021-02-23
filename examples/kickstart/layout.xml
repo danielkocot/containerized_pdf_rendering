@@ -1,0 +1,124 @@
+<Layout
+  xmlns="urn:speedata.de:2009/publisher/en"
+  xmlns:sd="urn:speedata:2009/publisher/functions/en">
+  <Trace grid="yes" assignments="yes" objects="yes" verbose="yes" gridallocation="yes" hyphenation="yes" kerning="yes" textformat="yes" />
+  <Options mainlanguage="German"/>
+  <LoadFontfile name="RubikRegular" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-Regular.otf"/>
+  <LoadFontfile name="RubikBold" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-Bold.otf"/>
+  <LoadFontfile name="RubikItalic" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-Italic.otf"/>
+  <LoadFontfile name="RubikMedium" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-Medium.otf"/>
+  <LoadFontfile name="RubikLight" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-Light.otf"/>
+  <LoadFontfile name="RubikBoldItalic" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-BoldItalic.otf"/>
+  <LoadFontfile name="RubikMediumItalic" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-MediumItalic.otf"/>
+  <LoadFontfile name="RubikLightItalic" filename="https://github.com/googlefonts/rubik/raw/master/fonts/otf/Rubik-LightItalic.otf"/>
+  <DefineFontfamily fontsize="11" leading="12" name="description">
+    <Regular fontface="RubikRegular"/>
+    <Bold fontface="RubikBold"/>
+    <Italic fontface="RubikItalic"/>
+    <BoldItalic fontface="RubikBoldItalic"/>
+  </DefineFontfamily>
+  <DefineFontfamily fontsize="12" leading="13" name="product">
+    <Regular fontface="RubikRegular"/>
+    <Bold fontface="RubikBold"/>
+    <Italic fontface="RubikItalic"/>
+    <BoldItalic fontface="RubikBoldItalic"/>
+  </DefineFontfamily>
+  <DefineFontfamily fontsize="17" leading="19" name="price">
+    <Regular fontface="RubikRegular"/>
+    <Bold fontface="RubikBold"/>
+    <Italic fontface="RubikItalic"/>
+    <BoldItalic fontface="RubikBoldItalic"/>
+  </DefineFontfamily>
+  <Record element="products">
+    <ProcessNode select="product"/>
+  </Record>
+  <Record element="product">
+    <SetVariable variable="diameter" select="description/diameter"/>
+    <SetVariable variable="type" select="attribute/@type"/>
+    <PlaceObject>
+      <Table stretch="max">
+        <Columns>
+          <Column width="1*"/>
+          <Column width="2*"/> 
+        </Columns>
+        <Tr>
+          <Td>
+            <Image file="{image}"/>
+          </Td>
+          <Td align="left" valign="top">
+            <Paragraph fontfamily="product"><B><Value select="@name"/></B></Paragraph>
+            <Paragraph fontfamily="description">
+              <Switch>
+                <Case test="not(empty($diameter))">
+                  <Value select="$diameter"/>
+                  <Value> Durchmesser, </Value>
+                  <Value select="description/details"/>
+                </Case>
+                <Otherwise>
+                  <Value select="description/details"/>
+                </Otherwise>
+              </Switch>
+            </Paragraph>
+            <ForAll select="description/dash">
+              <Table max="stretch" fontfamily="description">
+                <Columns>
+                  <Column width="5mm"/>
+                  <Column width="5mm"/>
+                  <Column width="1*"/>
+                </Columns>
+                <Tr valign="top">
+                  <Td></Td>
+                  <Td>
+                    <Paragraph>
+                      <Value>• </Value>
+                    </Paragraph>
+                  </Td>
+                  <Td>
+                    <Paragraph textformat="justified">
+                      <Value select="."/>
+                    </Paragraph>
+                  </Td>
+                </Tr>
+              </Table>
+            </ForAll>
+            <ForAll select="attribute">
+              <Switch>
+                <Case test="$type != 'package'">
+                  <Table>
+                    <Tr>
+                      <Td></Td>
+                      <Td><Paragraph><Value select="@value"/>:</Paragraph></Td>
+                    </Tr>
+                  </Table>
+                  <Table width="5" stretch="max">
+                    <Tablehead>
+                      <Tr backgroundcolor="gray">
+                        <Td><Paragraph><Value>Menge</Value></Paragraph></Td>
+                        <Td><Paragraph><Value>Einheit</Value></Paragraph></Td>
+                        <Td><Paragraph><Value>Preis</Value></Paragraph></Td>
+                      </Tr>
+                    </Tablehead>
+                    <ForAll select="quantity">
+                      <Tr>
+                        <Td><Paragraph><Value select="."/></Paragraph></Td>
+                        <Td><Paragraph><Value select="@unit"/></Paragraph></Td>
+                        <Td><Paragraph><Value select="concat(@price,@currency"/></Paragraph></Td>
+                      </Tr>
+                    </ForAll>
+                  </Table>
+                </Case>
+                <Otherwise>
+                  <Table width="10" stretch="max">
+                    <Tr>
+                      <Td align="right" height="30"><Paragraph fontface="price"><Value select="concat(quantity/@price,quantity/@currency)"/></Paragraph></Td>
+                    </Tr>
+                  </Table>
+                </Otherwise>
+              </Switch>
+            </ForAll>
+          </Td>
+        </Tr>
+      </Table>
+    </PlaceObject>
+  </Record>
+</Layout>
